@@ -1,0 +1,27 @@
+PROJECT: INT8 Matrix-Multiply Accelerator
+
+MATRIX DIMENSIONS: 8x8
+
+OPERAND WIDTH: Signed 8-bit
+
+OPERATION: C = A x B
+
+NUMBER OF OUTPUT ELEMENTS: 64
+
+CLOCK DOMAINS: Single synchronous clock
+
+INITIAL CLOCK PERIOD: 10 ns
+
+RESET: Active-low reset
+
+RTL LANGUAGE: SystemVerilog
+
+SYNTHESIS: Yosys
+
+PHYSICAL DESIGN: OpenROAD
+
+TIMING ANALYSIS: OpenSTA
+
+TECHNOLOGY: Sky130HD
+
+LAYOUT VIEWER: KLayout
