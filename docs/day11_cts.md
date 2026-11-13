@@ -1,8 +1,8 @@
 # Day 11 – Clock Tree Synthesis (CTS)
 
-**Project:** INT8 Matrix Multiplication Accelerator  
-**Technology:** Sky130HD  
-**Physical Design Flow:** OpenROAD-flow-scripts (ORFS)  
+**Project:** INT8 Matrix Multiplication Accelerator
+**Technology:** Sky130HD
+**Physical Design Flow:** OpenROAD-flow-scripts (ORFS)
 **Date:** November 13, 2026
 
 ## 1. Objective
