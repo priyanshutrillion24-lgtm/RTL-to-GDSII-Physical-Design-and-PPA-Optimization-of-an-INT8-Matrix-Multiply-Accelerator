@@ -1,0 +1,252 @@
+
+==========================================================================
+floorplan final report_tns
+--------------------------------------------------------------------------
+tns max -1515.68
+
+==========================================================================
+floorplan final report_wns
+--------------------------------------------------------------------------
+wns max -3.60
+
+==========================================================================
+floorplan final report_worst_slack
+--------------------------------------------------------------------------
+worst slack max -3.60
+
+==========================================================================
+floorplan final report_clock_min_period
+--------------------------------------------------------------------------
+core_clk period_min = 13.60 fmax = 73.51
+
+==========================================================================
+floorplan final report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: rst_n (input port clocked by core_clk)
+Endpoint: u_controller.k_idx[0]$_DFF_PN0_
+          (removal check against rising-edge clock core_clk)
+Path Group: asynchronous
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.20    0.20 ^ input external delay
+   165    0.59    0.10    0.00    0.20 ^ rst_n (in)
+                                         rst_n (net)
+                  0.10    0.00    0.20 ^ u_controller.k_idx[0]$_DFF_PN0_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+                                  0.20   data arrival time
+
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.05    0.05   clock uncertainty
+                          0.00    0.05   clock reconvergence pessimism
+                                  0.05 ^ u_controller.k_idx[0]$_DFF_PN0_/CLK (sky130_fd_sc_hd__dfrtp_1)
+                          0.35    0.40   library removal time
+                                  0.40   data required time
+-----------------------------------------------------------------------------
+                                  0.40   data required time
+                                 -0.20   data arrival time
+-----------------------------------------------------------------------------
+                                 -0.20   slack (VIOLATED)
+
+
+Startpoint: rst_n (input port clocked by core_clk)
+Endpoint: done (output port clocked by core_clk)
+Path Group: core_clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.20    0.20 ^ input external delay
+   165    0.59    0.10    0.00    0.20 ^ rst_n (in)
+                                         rst_n (net)
+                  0.10    0.00    0.20 ^ _7066_/B (sky130_fd_sc_hd__and2_1)
+     1    0.00    0.02    0.11    0.31 ^ _7066_/X (sky130_fd_sc_hd__and2_1)
+                                         done (net)
+                  0.02    0.00    0.31 ^ done (out)
+                                  0.31   data arrival time
+
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.05    0.05   clock uncertainty
+                          0.00    0.05   clock reconvergence pessimism
+                          0.20    0.25   output external delay
+                                  0.25   data required time
+-----------------------------------------------------------------------------
+                                  0.25   data required time
+                                 -0.31   data arrival time
+-----------------------------------------------------------------------------
+                                  0.06   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: rst_n (input port clocked by core_clk)
+Endpoint: u_controller.state[0]$_DFF_PN1_
+          (recovery check against rising-edge clock core_clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 ^ input external delay
+   165    0.59    0.10    0.00    2.00 ^ rst_n (in)
+                                         rst_n (net)
+                  0.10    0.00    2.00 ^ u_controller.state[0]$_DFF_PN1_/SET_B (sky130_fd_sc_hd__dfstp_2)
+                                  2.00   data arrival time
+
+                  0.10   10.00   10.00   clock core_clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.20    9.80   clock uncertainty
+                          0.00    9.80   clock reconvergence pessimism
+                                  9.80 ^ u_controller.state[0]$_DFF_PN1_/CLK (sky130_fd_sc_hd__dfstp_2)
+                          0.15    9.95   library recovery time
+                                  9.95   data required time
+-----------------------------------------------------------------------------
+                                  9.95   data required time
+                                 -2.00   data arrival time
+-----------------------------------------------------------------------------
+                                  7.95   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by core_clk)
+Endpoint: u_storage.result_mem[32][0]$_DFFE_PP_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 ^ input external delay
+   165    0.59    0.10    0.00    2.00 ^ rst_n (in)
+                                         rst_n (net)
+                  0.10    0.00    2.00 ^ _6648_/B (sky130_fd_sc_hd__nand2_1)
+     1    0.00    0.04    0.06    2.06 v _6648_/Y (sky130_fd_sc_hd__nand2_1)
+                                         _2620_ (net)
+                  0.04    0.00    2.06 v _6649_/A (sky130_fd_sc_hd__inv_1)
+     4    0.01    0.06    0.07    2.12 ^ _6649_/Y (sky130_fd_sc_hd__inv_1)
+                                         busy (net)
+                  0.06    0.00    2.12 ^ _6902_/B (sky130_fd_sc_hd__nand2_1)
+     8    0.02    0.16    0.15    2.27 v _6902_/Y (sky130_fd_sc_hd__nand2_1)
+                                         _2718_ (net)
+                  0.16    0.00    2.27 v _6940_/C (sky130_fd_sc_hd__nor3_1)
+   152    0.52   13.80   10.31   12.58 ^ _6940_/Y (sky130_fd_sc_hd__nor3_1)
+                                         _1099_ (net)
+                 13.80    0.00   12.58 ^ u_storage.result_mem[32][0]$_DFFE_PP_/DE (sky130_fd_sc_hd__edfxtp_1)
+                                 12.58   data arrival time
+
+                  0.10   10.00   10.00   clock core_clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.20    9.80   clock uncertainty
+                          0.00    9.80   clock reconvergence pessimism
+                                  9.80 ^ u_storage.result_mem[32][0]$_DFFE_PP_/CLK (sky130_fd_sc_hd__edfxtp_1)
+                         -0.82    8.98   library setup time
+                                  8.98   data required time
+-----------------------------------------------------------------------------
+                                  8.98   data required time
+                                -12.58   data arrival time
+-----------------------------------------------------------------------------
+                                 -3.60   slack (VIOLATED)
+
+
+
+==========================================================================
+floorplan final report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: rst_n (input port clocked by core_clk)
+Endpoint: u_controller.state[0]$_DFF_PN1_
+          (recovery check against rising-edge clock core_clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 ^ input external delay
+   165    0.59    0.10    0.00    2.00 ^ rst_n (in)
+                                         rst_n (net)
+                  0.10    0.00    2.00 ^ u_controller.state[0]$_DFF_PN1_/SET_B (sky130_fd_sc_hd__dfstp_2)
+                                  2.00   data arrival time
+
+                  0.10   10.00   10.00   clock core_clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.20    9.80   clock uncertainty
+                          0.00    9.80   clock reconvergence pessimism
+                                  9.80 ^ u_controller.state[0]$_DFF_PN1_/CLK (sky130_fd_sc_hd__dfstp_2)
+                          0.15    9.95   library recovery time
+                                  9.95   data required time
+-----------------------------------------------------------------------------
+                                  9.95   data required time
+                                 -2.00   data arrival time
+-----------------------------------------------------------------------------
+                                  7.95   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by core_clk)
+Endpoint: u_storage.result_mem[32][0]$_DFFE_PP_
+          (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock core_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 ^ input external delay
+   165    0.59    0.10    0.00    2.00 ^ rst_n (in)
+                                         rst_n (net)
+                  0.10    0.00    2.00 ^ _6648_/B (sky130_fd_sc_hd__nand2_1)
+     1    0.00    0.04    0.06    2.06 v _6648_/Y (sky130_fd_sc_hd__nand2_1)
+                                         _2620_ (net)
+                  0.04    0.00    2.06 v _6649_/A (sky130_fd_sc_hd__inv_1)
+     4    0.01    0.06    0.07    2.12 ^ _6649_/Y (sky130_fd_sc_hd__inv_1)
+                                         busy (net)
+                  0.06    0.00    2.12 ^ _6902_/B (sky130_fd_sc_hd__nand2_1)
+     8    0.02    0.16    0.15    2.27 v _6902_/Y (sky130_fd_sc_hd__nand2_1)
+                                         _2718_ (net)
+                  0.16    0.00    2.27 v _6940_/C (sky130_fd_sc_hd__nor3_1)
+   152    0.52   13.80   10.31   12.58 ^ _6940_/Y (sky130_fd_sc_hd__nor3_1)
+                                         _1099_ (net)
+                 13.80    0.00   12.58 ^ u_storage.result_mem[32][0]$_DFFE_PP_/DE (sky130_fd_sc_hd__edfxtp_1)
+                                 12.58   data arrival time
+
+                  0.10   10.00   10.00   clock core_clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.20    9.80   clock uncertainty
+                          0.00    9.80   clock reconvergence pessimism
+                                  9.80 ^ u_storage.result_mem[32][0]$_DFFE_PP_/CLK (sky130_fd_sc_hd__edfxtp_1)
+                         -0.82    8.98   library setup time
+                                  8.98   data required time
+-----------------------------------------------------------------------------
+                                  8.98   data required time
+                                -12.58   data arrival time
+-----------------------------------------------------------------------------
+                                 -3.60   slack (VIOLATED)
+
+
+
+==========================================================================
+floorplan final report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             1.48e-02   1.74e-04   2.21e-08   1.50e-02  65.3%
+Combinational          3.56e-03   4.38e-03   1.84e-08   7.94e-03  34.7%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  1.83e-02   4.55e-03   4.06e-08   2.29e-02 100.0%
+                          80.1%      19.9%       0.0%
