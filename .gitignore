@@ -3,3 +3,4 @@ obj_dir/
 *.fst
 *.log
 simv
+/results/day19_expB/3_place.odb
