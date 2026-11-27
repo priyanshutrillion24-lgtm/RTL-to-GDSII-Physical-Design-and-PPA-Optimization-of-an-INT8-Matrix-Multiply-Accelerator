@@ -1,0 +1,97 @@
+[2026-11-27 05:23:41.125] [miter_logger] [info] MiterStrategy::run starting
+[2026-11-27 05:23:41.125] [miter_logger] [info] Collecting POs for design 0: matmul_top
+
+[2026-11-27 05:23:41.170] [miter_logger] [info] Collected 2427 PIs for design 0
+
+[2026-11-27 05:23:41.170] [miter_logger] [info] Collected 7224 POs for design 0
+
+[2026-11-27 05:23:41.170] [miter_logger] [info] design 0 PI summary by model/term (2427 total terminals, 12 unique rows):
+| Model                     | Term         | Count |
+|---------------------------|--------------|-------|
+| sky130_fd_sc_hd__edfxtp_1 | Q            |  2240 |
+| sky130_fd_sc_hd__dfrtp_1  | Q            |   160 |
+| matmul_top                | load_data    |     8 |
+| matmul_top                | load_addr    |     6 |
+| matmul_top                | result_addr  |     6 |
+| matmul_top                | clk          |     1 |
+| matmul_top                | load_sel     |     1 |
+| matmul_top                | load_we      |     1 |
+| matmul_top                | result_rd_en |     1 |
+| matmul_top                | rst_n        |     1 |
+| matmul_top                | start        |     1 |
+| sky130_fd_sc_hd__dfstp_2  | Q            |     1 |
+
+[2026-11-27 05:23:41.171] [miter_logger] [info] design 0 PO summary by model/term (7224 total terminals, 12 unique rows):
+| Model                     | Term        | Count |
+|---------------------------|-------------|-------|
+| sky130_fd_sc_hd__edfxtp_1 | CLK         |  2240 |
+| sky130_fd_sc_hd__edfxtp_1 | D           |  2240 |
+| sky130_fd_sc_hd__edfxtp_1 | DE          |  2240 |
+| sky130_fd_sc_hd__dfrtp_1  | CLK         |   160 |
+| sky130_fd_sc_hd__dfrtp_1  | D           |   160 |
+| sky130_fd_sc_hd__dfrtp_1  | RESET_B     |   160 |
+| matmul_top                | result_data |    19 |
+| matmul_top                | busy        |     1 |
+| matmul_top                | done        |     1 |
+| sky130_fd_sc_hd__dfstp_2  | CLK         |     1 |
+| sky130_fd_sc_hd__dfstp_2  | D           |     1 |
+| sky130_fd_sc_hd__dfstp_2  | SET_B       |     1 |
+
+[2026-11-27 05:23:41.171] [miter_logger] [info] Collecting POs for design 1: matmul_top
+
+[2026-11-27 05:23:41.220] [miter_logger] [info] size of common inputs: 2427
+[2026-11-27 05:23:41.220] [miter_logger] [info] size of diff0 inputs: 0
+[2026-11-27 05:23:41.220] [miter_logger] [info] size of diff1 inputs: 0
+[2026-11-27 05:23:41.220] [miter_logger] [info] Collected 2427 PIs for design 1
+
+[2026-11-27 05:23:41.220] [miter_logger] [info] Collected 7224 POs for design 1
+
+[2026-11-27 05:23:41.221] [miter_logger] [info] design 1 PI summary by model/term (2427 total terminals, 12 unique rows):
+| Model                     | Term         | Count |
+|---------------------------|--------------|-------|
+| sky130_fd_sc_hd__edfxtp_1 | Q            |  2240 |
+| sky130_fd_sc_hd__dfrtp_1  | Q            |   160 |
+| matmul_top                | load_data    |     8 |
+| matmul_top                | load_addr    |     6 |
+| matmul_top                | result_addr  |     6 |
+| matmul_top                | clk          |     1 |
+| matmul_top                | load_sel     |     1 |
+| matmul_top                | load_we      |     1 |
+| matmul_top                | result_rd_en |     1 |
+| matmul_top                | rst_n        |     1 |
+| matmul_top                | start        |     1 |
+| sky130_fd_sc_hd__dfstp_2  | Q            |     1 |
+
+[2026-11-27 05:23:41.221] [miter_logger] [info] design 1 PO summary by model/term (7224 total terminals, 12 unique rows):
+| Model                     | Term        | Count |
+|---------------------------|-------------|-------|
+| sky130_fd_sc_hd__edfxtp_1 | CLK         |  2240 |
+| sky130_fd_sc_hd__edfxtp_1 | D           |  2240 |
+| sky130_fd_sc_hd__edfxtp_1 | DE          |  2240 |
+| sky130_fd_sc_hd__dfrtp_1  | CLK         |   160 |
+| sky130_fd_sc_hd__dfrtp_1  | D           |   160 |
+| sky130_fd_sc_hd__dfrtp_1  | RESET_B     |   160 |
+| matmul_top                | result_data |    19 |
+| matmul_top                | busy        |     1 |
+| matmul_top                | done        |     1 |
+| sky130_fd_sc_hd__dfstp_2  | CLK         |     1 |
+| sky130_fd_sc_hd__dfstp_2  | D           |     1 |
+| sky130_fd_sc_hd__dfstp_2  | SET_B       |     1 |
+
+[2026-11-27 05:23:41.221] [miter_logger] [info] normalizeInputs: starting
+[2026-11-27 05:23:41.225] [miter_logger] [info] size of common inputs: 2427
+[2026-11-27 05:23:41.225] [miter_logger] [info] size of diff0 inputs: 0
+[2026-11-27 05:23:41.225] [miter_logger] [info] size of diff1 inputs: 0
+[2026-11-27 05:23:41.225] [miter_logger] [info] normalizeOutputs: starting
+[2026-11-27 05:23:41.237] [miter_logger] [info] size of common outputs: 7224
+[2026-11-27 05:23:41.237] [miter_logger] [info] size of diff0 outputs: 0
+[2026-11-27 05:23:41.237] [miter_logger] [info] size of diff1 outputs: 0
+[2026-11-27 05:23:41.238] [miter_logger] [info] size of PIs in circuit 0: 2427
+[2026-11-27 05:23:41.238] [miter_logger] [info] size of PIs in circuit 1: 2427
+[2026-11-27 05:23:41.238] [miter_logger] [info] size of POs in circuit 0: 7224
+[2026-11-27 05:23:41.238] [miter_logger] [info] size of POs in circuit 1: 7224
+[2026-11-27 05:23:41.579] [miter_logger] [info] Building miter expression
+[2026-11-27 05:23:41.580] [miter_logger] [info] Finished building miter expression
+[2026-11-27 05:23:41.580] [miter_logger] [info] Starting solver
+[2026-11-27 05:23:41.580] [miter_logger] [info] SAT solver finished: UNSAT
+[2026-11-27 05:23:41.580] [miter_logger] [info] Circuits are IDENTICAL
